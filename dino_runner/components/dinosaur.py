@@ -3,7 +3,7 @@ from dino_runner.utils.constants import DEAD, DEFAULT_TYPE, HAMMER_TYPE, RUNNING
 from pygame.sprite import Sprite
 
 class Dinosaur (Sprite):
-    X_POS = 80
+    X_POS = 50
     Y_POS = 310
     JUMP_VEL= 20
     Y_POS_LIMITE = 50
