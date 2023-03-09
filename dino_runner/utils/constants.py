@@ -76,7 +76,13 @@ BG = pygame.image.load(os.path.join(IMG_DIR, 'Other/Track.png'))
 
 HEART = pygame.image.load(os.path.join(IMG_DIR, 'Other/SmallHeart.png'))
 
+GAMEOVER = pygame.image.load(os.path.join(IMG_DIR, 'Dino/dinosgameover.png'))
+
 DEFAULT_TYPE = "default"
 
 SHIELD_TYPE = "shield"
+HAMMER_TYPE = "hammer"
+HEART_TYPE= "heart"
 INITIAL_GAME_SPEED= 20
+
+DEAD = pygame.image.load(os.path.join(IMG_DIR, 'Dino/DinoDead.png'))

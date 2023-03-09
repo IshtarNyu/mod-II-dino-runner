@@ -1,4 +1,5 @@
 
+import random
 from dino_runner.components.obstacles.obstacle import Obstacle
 from dino_runner.utils.constants import BIRD
 
@@ -7,7 +8,7 @@ class Bird(Obstacle):
     
     def __init__(self,image):
         super().__init__(image)
-        self.rect.y = 250
+        self.rect.y = random.randint(100,300)
         self.index= 0
         
     def update(self,game_speed,obstacles):

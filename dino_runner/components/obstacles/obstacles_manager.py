@@ -7,7 +7,7 @@ from dino_runner.components.obstacles.cactus import Cactus
 from dino_runner.components.obstacles.large_cactus import LargeCactus
 from dino_runner.components.obstacles.stego import Stego
 
-from dino_runner.utils.constants import BIRD, LARGE_CACTUS, SHIELD_TYPE, SMALL_CACTUS, STEGO
+from dino_runner.utils.constants import BIRD, DEAD, HAMMER_TYPE, LARGE_CACTUS, SHIELD_TYPE, SMALL_CACTUS, STEGO
 
 
 class ObstacleManager():
@@ -42,11 +42,21 @@ class ObstacleManager():
             
             if game.player.type == SHIELD_TYPE:
                 print("Shielf activate,no damege")
+                
+            elif game.player.type == HAMMER_TYPE and game.player.dino_rect.colliderect(obstacle.rect):
+                
+                self.obstacles.pop()
+                
+                
+
+
+                print("hammer activate,no damege")    
     
                 
             elif game.player.dino_rect.colliderect(obstacle.rect):
-                #game.player.dead()
-                pygame.time.delay(1000)
+                
+                game.player.image = DEAD
+                
                 game.playing= False
                 break
         
@@ -58,6 +68,9 @@ class ObstacleManager():
             
     def remove_obstacles(self):
         self.obstacles=[]
+        
+    def remove_power_ups(self):
+        self.power_ups=[]    
 
           
             
